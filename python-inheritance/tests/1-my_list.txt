@@ -1,0 +1,42 @@
+"""
+Tests for MyList class
+
+>>> MyList = __import__('1-my_list').MyList
+
+>>> ml = MyList()
+>>> ml.append(3)
+>>> ml.append(1)
+>>> ml.append(2)
+>>> ml.print_sorted()
+[1, 2, 3]
+
+>>> ml
+[3, 1, 2]
+
+>>> ml2 = MyList([4, 2, 8, 1])
+>>> ml2.print_sorted()
+[1, 2, 4, 8]
+
+>>> ml2
+[4, 2, 8, 1]
+
+>>> ml3 = MyList()
+>>> ml3.print_sorted()
+[]
+
+>>> ml4 = MyList([1])
+>>> ml4.print_sorted()
+[1]
+
+>>> ml5 = MyList([-3, 0, -1, 2])
+>>> ml5.print_sorted()
+[-3, -1, 0, 2]
+
+>>> ml6 = MyList([5, 5, 5])
+>>> ml6.print_sorted()
+[5, 5, 5]
+
+>>> isinstance(ml, list)
+True
+
+"""
