@@ -22,7 +22,7 @@ Float elements:
 
 Division by float('inf'):
     >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
-    [[0.0, 0.0], [[0.0, 0.0]]
+    [[0.0, 0.0], [0.0, 0.0]]
 
 Handling div = 0:
     >>> matrix_divided([[1, 2], [3, 4]], 0)
