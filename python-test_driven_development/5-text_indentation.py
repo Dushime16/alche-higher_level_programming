@@ -6,7 +6,8 @@ Module for text_indentation method.
 
 def text_indentation(text):
     """
-    Prints a text with 2 new lines after each of these characters: '.', '?', and ':'
+    Prints a text with 2 new lines after each of these
+    characters: '.', '?', and ':'
 
     Args:
         text (str): The text to format and print.
