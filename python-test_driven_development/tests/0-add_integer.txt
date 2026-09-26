@@ -1,60 +1,71 @@
-The ``0-add_integer`` module
-
 ===========================
-Import function
+How to Use 0-add_integer.py
 ===========================
 
+This module defines an addition function ``add_integer(a, b=98)``.
+
+Importing the function:
     >>> add_integer = __import__('0-add_integer').add_integer
 
-===========================
-Basic addition
-===========================
+Normal usage with integers:
+    >>> add_integer(1, 2)
+    3
 
-    >>> add_integer(2, 3)
-    5
+    >>> add_integer(100, -2)
+    98
 
+Default value for b:
     >>> add_integer(2)
     100
 
-===========================
-Floats are cast to int
-===========================
+Casting floats to integers:
+    >>> add_integer(100.3, -2)
+    98
 
-    >>> add_integer(2.9, 3.1)
-    5
+    >>> add_integer(2.1, 98.9)
+    100
 
-    >>> add_integer(5.7, 2.3)
-    7
-
-===========================
-Negative numbers
-===========================
-
-    >>> add_integer(-2, -3)
-    -5
-
-    >>> add_integer(-2.5, 3.9)
-    1
-
-===========================
-Type errors
-===========================
-
-    >>> add_integer("2", 3)
+Handling infinity (Float overflow):
+    >>> add_integer(float('inf'), 0)
     Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+Handling NaN (cannot convert float NaN to integer):
+    >>> add_integer(float('nan'), 2)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+Handling invalid inputs for 'a':
+    >>> add_integer("School", 1)
+    Traceback (most recent call last):
+        ...
     TypeError: a must be an integer
-
-    >>> add_integer(2, "3")
-    Traceback (most recent call last):
-    TypeError: b must be an integer
 
     >>> add_integer(None)
     Traceback (most recent call last):
+        ...
     TypeError: a must be an integer
 
-===========================
-Edge cases
-===========================
+    >>> add_integer([1, 2], 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
 
-    >>> add_integer(0, 0)
-    0
+Handling invalid inputs for 'b':
+    >>> add_integer(4, "School")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+    >>> add_integer(4, None)
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+Handling missing positional argument 'a':
+    >>> add_integer()
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() missing 1 required positional argument: 'a'
